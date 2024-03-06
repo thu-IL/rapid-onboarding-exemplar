@@ -56,3 +56,5 @@ from
     final
 order by
     order_date
+
+    -- test PR template
