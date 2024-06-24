@@ -7,6 +7,8 @@ Our analytics stack:
 - Warehouse: Snowflake
 - Transformation: dbt
 
+This is ducking awesome!
+
 ## Permissions
 
 Access to the Snowflake warehouse is managed on a per-user basis by the training team. 
