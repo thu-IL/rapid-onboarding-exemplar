@@ -1,7 +1,7 @@
 {% snapshot example_generate_schema_snapshot %}
     {{
         config(
-            target_database='analytics',
+            target_database='THU_TEST_DB',
             target_schema=generate_schema_name('snapshots'),
             unique_key='id',
             strategy='timestamp',

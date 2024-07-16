@@ -1,7 +1,7 @@
 {% snapshot example_orders_line_items_snapshot %}
     {{
         config(
-            target_database='analytics',
+            target_database='THU_TEST_DB',
             target_schema='snapshots',
             unique_key='id',
             strategy='timestamp',
