@@ -53,6 +53,7 @@ models:
     staging:
       +materialized: view
     _samples:
+      +enabled: false
       +materialized: table
       staging:
         jaffle_shop:

@@ -9,7 +9,7 @@
 
 {{
     config(
-      target_database='analytics',
+      target_database='THU_TEST_DB',
       target_schema=var('example_target_snapshot_schema'),
       unique_key='order_item_id',
       strategy='check',
