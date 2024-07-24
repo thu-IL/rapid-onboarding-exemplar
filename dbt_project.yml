@@ -72,5 +72,5 @@ tests:
         +store_failures: "{{ true if target.name == 'prod' else false }}"
 
 snapshots:
-  samples:
+  _samples:
     +enabled: false
