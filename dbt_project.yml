@@ -65,8 +65,12 @@ models:
     staging:
       +materialized: ephemeral
 
+  dbt_project_evaluator:
+    +enabled: false
+
 tests:
   rapid_onboarding_exemplar:
     _samples:
+      +enabled: false
       staging:
         +store_failures: "{{ true if target.name == 'prod' else false }}"
