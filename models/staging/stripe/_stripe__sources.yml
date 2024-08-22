@@ -3,10 +3,19 @@ version: 2
 sources:
   - name: stripe
     description: Incoming stripe payment data.
+    loader: Talend
+    config:
+      meta:
+        talend_job_id: 123
+        update_frequency: daily
+        origin: Stripe app
+        model_maturity: in dev
     database: raw
     schema: stripe
     tables:
       - name: payment
+        meta:
+          contains_pii: false
         columns:
           - name: id
             tests:
