@@ -21,7 +21,7 @@ Explaining Configurations
         persist_docs = {"relation": true, "columns": true},
         tags = ['finance', 'orders'],
         schema = 'jaffle_shop',
-        database = 'analytics'
+        database = 'THU_TEST_DB'
     ) 
 }}
 

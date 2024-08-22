@@ -1,6 +1,6 @@
 {# https://github.com/dbt-labs/dbt-audit-helper#advanced-usage---dbt-cloud #}
 
-{% macro audit_dim_customers() %}
+{# {% macro audit_dim_customers() %}
 
     {%- set columns_to_compare=adapter.get_columns_in_relation(ref('dim_customers'))  -%}
 
@@ -31,4 +31,4 @@
         {% endfor %}
     {% endif %}
 
-{% endmacro %}
+{% endmacro %} #}

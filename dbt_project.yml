@@ -30,6 +30,9 @@ vars:
   incremental_lookback_value: 3
   incremental_lookback_period: 'hour'
   future_proof_date: '9999-12-31'
+  start_date_param: "{{ modules.datetime.date.today() }}"
+  start_date_param_env: "{{ modules.datetime.date.today() if target.name | upper == 'DEV' else '2022-04-05' }}"
+  s_warehouse: "DEMO_DEV"
 
 on-run-end:
   - "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
@@ -53,6 +56,7 @@ models:
     staging:
       +materialized: view
     _samples:
+      +enabled: false
       +materialized: table
       staging:
         jaffle_shop:
@@ -60,12 +64,18 @@ models:
           +tags:
             - example 
             - hourly
+      incremental:
+        +enabled: true
   dbt_artifacts:
     staging:
       +materialized: ephemeral
 
+  dbt_project_evaluator:
+    +enabled: false
+
 tests:
   rapid_onboarding_exemplar:
     _samples:
+      +enabled: false
       staging:
         +store_failures: "{{ true if target.name == 'prod' else false }}"
