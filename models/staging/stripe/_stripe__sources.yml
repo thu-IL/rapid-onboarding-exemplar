@@ -16,6 +16,7 @@ sources:
       - name: payment
         meta:
           contains_pii: false
+          update_frequency: daily
         columns:
           - name: id
             tests:
