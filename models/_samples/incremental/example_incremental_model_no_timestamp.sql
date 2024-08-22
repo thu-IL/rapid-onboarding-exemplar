@@ -1,7 +1,8 @@
 {{
     config(
         materialized='incremental',
-        on_schema_change='sync_all_columns'
+        on_schema_change='sync_all_columns',
+        snowflake_warehouse=var('s_warehouse') if flags.FULL_REFRESH else target.warehouse
     )
 }}
 
