@@ -16,3 +16,4 @@ with source as (
 
 select *
 from source
+-- test state:modified.body
