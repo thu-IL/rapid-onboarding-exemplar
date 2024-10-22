@@ -9,6 +9,7 @@ line_item as (
     select * from {{ ref('int_line_items_amounts_calculated') }}
 
 )
+
 select
 
     line_item.order_item_id,
@@ -46,6 +47,6 @@ select
 from
     orders
 inner join line_item
-        on orders.order_id = line_item.order_id
+    on orders.order_id = line_item.order_id
 order by
     orders.order_date
