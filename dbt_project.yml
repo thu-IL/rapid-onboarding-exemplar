@@ -56,6 +56,7 @@ models:
     staging:
       +materialized: view
     _samples:
+      +schema: samples
       +enabled: false
       +materialized: table
       staging:
