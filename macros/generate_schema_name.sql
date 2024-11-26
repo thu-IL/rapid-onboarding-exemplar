@@ -7,8 +7,9 @@
 
     {%- else -%}
 
-        {# we just want schemas in personal dev target to have prefixes #}
-        {%- if (target.name | lower) == 'personal_dev' -%}
+        {%- if (target.name | lower) == 'ci' -%}
+            {{ default_schema }}
+        {%- elif (target.name | lower) == 'personal_dev' -%}
             {{ default_schema }}_{{ custom_schema_name | trim }}
         {%- else -%}
             {{ custom_schema_name | trim }}
